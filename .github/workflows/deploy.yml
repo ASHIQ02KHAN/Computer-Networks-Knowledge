@@ -11,6 +11,7 @@ on:
     paths:
       - "**.md"
       - "mkdocs.yml"
+      - "javascripts/**"
 
 permissions:
   contents: write   # Required for gh-deploy to push to gh-pages branch
@@ -42,6 +43,27 @@ jobs:
             mkdocs-git-revision-date-localized-plugin \
             mkdocs-minify-plugin
 
-      # ── 4. Deploy to GitHub Pages (gh-pages branch) ──────────────────────────
+      # ── 4. Prepare docs/ directory (MkDocs requires docs_dir != config dir) ──
+      - name: Prepare docs directory
+        run: |
+          mkdir -p docs
+          # Copy root markdown files
+          cp README.md docs/ 2>/dev/null || true
+          cp CONTRIBUTING.md docs/ 2>/dev/null || true
+          # Copy all module directories
+          for dir in 01-network-basics-and-architecture \
+                     02-network-security-fundamentals \
+                     03-application-layer-and-protocols \
+                     04-transport-layer-and-reliability \
+                     05-network-layer-and-routing \
+                     06-data-link-layer-and-lan \
+                     07-master-cheat-sheets-and-formulas; do
+            cp -r "$dir" docs/ 2>/dev/null || true
+          done
+          # Copy JavaScript assets for KaTeX
+          mkdir -p docs/javascripts
+          cp javascripts/katex-init.js docs/javascripts/ 2>/dev/null || true
+
+      # ── 5. Deploy to GitHub Pages (gh-pages branch) ──────────────────────────
       - name: Deploy to GitHub Pages
         run: mkdocs gh-deploy --force
