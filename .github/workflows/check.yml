@@ -1,0 +1,53 @@
+# ============================================================
+# GitHub Actions — Content Quality Check
+# Runs Markdown linting and broken-link detection on every
+# pull request and on every push to main.
+# ============================================================
+name: Content Quality Check
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  # ── Job 1: Markdown Lint ──────────────────────────────────
+  markdown-lint:
+    name: Markdown Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install markdownlint-cli
+        run: npm install -g markdownlint-cli
+
+      - name: Run markdownlint
+        # continue-on-error: true because we use custom formatting (badges,
+        # KaTeX blocks, Mermaid fences) that may trigger stylistic warnings.
+        continue-on-error: true
+        run: markdownlint "**/*.md" --ignore node_modules
+
+  # ── Job 2: Link Check ─────────────────────────────────────
+  link-check:
+    name: Broken Link Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Check links with Lychee
+        uses: lycheeverse/lychee-action@v1
+        with:
+          # Scan all Markdown files in the repository
+          args: >-
+            --exclude-loopback
+            --exclude-private
+            --timeout 30
+            --max-retries 3
+            "**/*.md"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

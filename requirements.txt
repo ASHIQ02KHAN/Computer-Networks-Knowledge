@@ -1,0 +1,11 @@
+# Python packages for running code examples in this repository
+
+# Third-party packages (install with: pip install -r requirements.txt)
+scapy          # Packet crafting, sniffing, and network analysis
+matplotlib     # Plotting graphs (throughput, delay, congestion windows)
+networkx       # Graph-based routing algorithm simulations (Dijkstra, Bellman-Ford)
+
+# Standard library modules (no installation needed — included with Python 3.x)
+# socket        # Low-level networking interface (TCP/UDP socket programming)
+# struct        # Binary data packing/unpacking (packet header construction)
+# hashlib       # Cryptographic hash functions (MD5, SHA-1, SHA-256 for integrity checks)

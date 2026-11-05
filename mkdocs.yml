@@ -1,0 +1,139 @@
+# ============================================================
+# MkDocs Material Configuration
+# Computer Networks — A to Z Knowledge Repository
+# ============================================================
+repo_url: https://github.com/ASHIQ2KHAN/Computer-Networks-Knowledge
+edit_uri: edit/main/
+
+site_name: "Computer Networks — A to Z Knowledge Repository"
+site_description: >-
+  A complete open-source Computer Networks course: theory, diagrams, formulas,
+  and exam solutions. Covers all 7 layers from Application to Data Link.
+site_author: "CN Knowledge Repository Contributors"
+
+# ── Docs root ───────────────────────────────────────────────
+docs_dir: "."
+
+# ── Theme ───────────────────────────────────────────────────
+theme:
+  name: material
+  palette:
+    # Dark mode (default)
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.code.annotate
+    - toc.follow
+  font:
+    text: "Inter"
+    code: "JetBrains Mono"
+  icon:
+    repo: fontawesome/brands/github
+
+# ── Plugins ─────────────────────────────────────────────────
+plugins:
+  - search:
+      separator: '[\s\-\.]+'
+  - git-revision-date-localized:
+      enable_creation_date: true
+      fallback_to_build_date: true  # graceful fallback outside git context
+  - minify:
+      minify_html: true
+
+# ── Markdown Extensions ─────────────────────────────────────
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+# ── Extra JavaScript (KaTeX math rendering) ─────────────────
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/contrib/auto-render.min.js
+  - javascripts/katex-init.js
+
+# ── Extra CSS ───────────────────────────────────────────────
+extra_css:
+  - https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css
+
+# ── Navigation ──────────────────────────────────────────────
+nav:
+  - Home: README.md
+  - Module 01 — Network Basics:
+    - Overview: 01-network-basics-and-architecture/README.md
+    - Internet & Network Core: 01-network-basics-and-architecture/01-internet-and-network-core.md
+    - Delay, Loss & Throughput: 01-network-basics-and-architecture/02-delay-loss-and-throughput.md
+    - Layering & Encapsulation: 01-network-basics-and-architecture/03-layering-and-encapsulation.md
+  - Module 02 — Network Security:
+    - Overview: 02-network-security-fundamentals/README.md
+    - CIA Triad & Cryptography: 02-network-security-fundamentals/01-cia-triad-and-cryptography.md
+    - Network Attacks & Defense: 02-network-security-fundamentals/02-network-attacks-and-defense.md
+  - Module 03 — Application Layer:
+    - Overview: 03-application-layer-and-protocols/README.md
+    - Application Architectures: 03-application-layer-and-protocols/01-application-architectures.md
+    - HTTP & Web Caching: 03-application-layer-and-protocols/02-http-and-web-caching.md
+    - Email & SMTP: 03-application-layer-and-protocols/03-email-protocols-smtp.md
+    - DNS: 03-application-layer-and-protocols/04-dns-domain-name-system.md
+  - Module 04 — Transport Layer:
+    - Overview: 04-transport-layer-and-reliability/README.md
+    - Transport Multiplexing: 04-transport-layer-and-reliability/01-transport-multiplexing.md
+    - UDP & Checksum: 04-transport-layer-and-reliability/02-udp-and-internet-checksum.md
+    - Reliable Data Transfer: 04-transport-layer-and-reliability/03-reliable-data-transfer.md
+    - TCP Principles & Handshake: 04-transport-layer-and-reliability/04-tcp-principles-and-handshake.md
+    - TCP Flow & Congestion Control: 04-transport-layer-and-reliability/05-tcp-flow-and-congestion-control.md
+  - Module 05 — Network Layer:
+    - Overview: 05-network-layer-and-routing/README.md
+    - Network Layer Overview: 05-network-layer-and-routing/01-network-layer-overview.md
+    - IPv4 & Fragmentation: 05-network-layer-and-routing/02-ipv4-and-fragmentation.md
+    - DHCP: 05-network-layer-and-routing/03-dhcp-dynamic-addressing.md
+    - NAT: 05-network-layer-and-routing/04-nat-network-address-translation.md
+    - Routing Algorithms: 05-network-layer-and-routing/05-routing-algorithms-dijkstra.md
+  - Module 06 — Data Link Layer:
+    - Overview: 06-data-link-layer-and-lan/README.md
+    - Error Detection: 06-data-link-layer-and-lan/01-link-layer-and-error-detection.md
+    - Multiple Access: 06-data-link-layer-and-lan/02-multiple-access-protocols.md
+    - MAC & ARP: 06-data-link-layer-and-lan/03-mac-addressing-and-arp.md
+  - Master Cheat Sheet:
+    - Overview: 07-master-cheat-sheets-and-formulas/README.md
+    - Formula Reference: 07-master-cheat-sheets-and-formulas/master-formula-cheat-sheet.md
+  - Contributing: CONTRIBUTING.md

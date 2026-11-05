@@ -1,0 +1,46 @@
+# ============================================================
+# GitHub Actions — PR Welcome Bot
+# Posts a friendly welcome comment on every newly opened PR.
+# ============================================================
+name: PR Welcome Bot
+
+on:
+  pull_request:
+    types:
+      - opened
+
+permissions:
+  pull-requests: write  # Required to post comments on PRs
+
+jobs:
+  welcome:
+    name: Welcome New Contributor
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Post welcome comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo, number } = context.issue;
+            await github.rest.issues.createComment({
+              owner,
+              repo,
+              issue_number: number,
+              body: [
+                "## 👋 Welcome & Thank You!",
+                "",
+                "Thank you for contributing to the **Computer Networks — A to Z Knowledge Repository**! 🎉",
+                "",
+                "Your pull request has been received and will be reviewed shortly. While you wait, please check that:",
+                "",
+                "- [ ] Your Markdown follows the project style (run `markdownlint` locally if possible).",
+                "- [ ] All formulas use KaTeX-compatible syntax wrapped in `$…$` or `$$…$$`.",
+                "- [ ] Diagrams use Mermaid fenced code blocks (` ```mermaid `).",
+                "- [ ] File names are lowercase with hyphens (e.g., `01-topic-name.md`).",
+                "",
+                "📖 For full contribution guidelines, see [CONTRIBUTING.md](../blob/main/CONTRIBUTING.md).",
+                "",
+                "We appreciate your effort to make this resource better for everyone. Happy learning! 🚀"
+              ].join("\n")
+            });

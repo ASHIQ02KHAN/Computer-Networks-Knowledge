@@ -1,0 +1,13 @@
+# ============================================================
+# Markdownlint Configuration — CN Knowledge Repository
+# Relaxed rules suitable for academic/educational content.
+# ============================================================
+default: true
+
+MD013: false  # Disable line-length limit (formulas & tables are long)
+MD033: false  # Allow inline HTML (badges, centered nav, alerts)
+MD041: false  # First line need not be a top-level heading
+MD024: false  # Allow duplicate headings (Q1/Q2 patterns in practice problems)
+
+MD007:
+  indent: 2   # List indentation: 2 spaces
