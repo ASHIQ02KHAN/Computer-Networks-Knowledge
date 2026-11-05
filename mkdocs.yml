@@ -12,7 +12,7 @@ site_description: >-
 site_author: "CN Knowledge Repository Contributors"
 
 # ── Docs root ───────────────────────────────────────────────
-docs_dir: "."
+docs_dir: docs
 
 # ── Theme ───────────────────────────────────────────────────
 theme:
@@ -137,4 +137,3 @@ nav:
     - Overview: 07-master-cheat-sheets-and-formulas/README.md
     - Formula Reference: 07-master-cheat-sheets-and-formulas/master-formula-cheat-sheet.md
   - Contributing: CONTRIBUTING.md
-
