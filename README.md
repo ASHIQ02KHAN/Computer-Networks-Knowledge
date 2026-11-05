@@ -1,9 +1,9 @@
 # 🌐 Computer Networks: Modern Course Knowledge Repository & Interactive Learning Guide
 
-[![Course Status](https://img.shields.io/badge/Status-Complete%20%26%20Production--Ready-brightgreen.svg?style=for-the-badge)](https://github.com/ASHIQ2KHAN/Computer-Networks-Knowledge)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](https://github.com/ASHIQ2KHAN/Computer-Networks-Knowledge)
-[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-orange.svg?style=for-the-badge)](https://github.com/ASHIQ2KHAN/Computer-Networks-Knowledge)
-[![Platform](https://img.shields.io/badge/Platform-GitHub%20Pages%20Ready-blueviolet.svg?style=for-the-badge)](https://github.com/ASHIQ2KHAN/Computer-Networks-Knowledge)
+[![Course Status](https://img.shields.io/badge/Status-Complete%20%26%20Production--Ready-brightgreen.svg?style=for-the-badge)](https://github.com/ASHIQ02KHAN/Computer-Networks-Knowledge)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](https://github.com/ASHIQ02KHAN/Computer-Networks-Knowledge)
+[![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-orange.svg?style=for-the-badge)](https://github.com/ASHIQ02KHAN/Computer-Networks-Knowledge)
+[![Platform](https://img.shields.io/badge/Platform-GitHub%20Pages%20Ready-blueviolet.svg?style=for-the-badge)](https://github.com/ASHIQ02KHAN/Computer-Networks-Knowledge)
 
 > **An open-source, beautifully structured, visual, and mathematically rigorous educational repository for mastering Computer Networking from A to Z.**  
 > Designed to feel like a modern interactive documentation platform and full-fledged university/industry curriculum.
@@ -12,7 +12,7 @@
 [![PRs Welcome](https://img.shields.io/badge/PRs-Welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Modules](https://img.shields.io/badge/Modules-7-blue.svg)](#-master-curriculum--chapter-roadmap)
 [![Chapters](https://img.shields.io/badge/Chapters-22-blue.svg)](#-master-curriculum--chapter-roadmap)
-[![GitHub Pages](https://img.shields.io/badge/Docs-Live%20Website-purple.svg)](https://ashiq2khan.github.io/Computer-Networks-Knowledge/)
+[![GitHub Pages](https://img.shields.io/badge/Docs-Live%20Website-purple.svg)](https://ashiq02khan.github.io/Computer-Networks-Knowledge/)
 [![Made With Love](https://img.shields.io/badge/Made%20with-%E2%9D%A4%EF%B8%8F-red.svg)](#)
 
 ---
